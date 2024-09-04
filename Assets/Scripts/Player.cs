@@ -63,7 +63,7 @@ public class Player : MonoBehaviour
              score += truncatedValue; 
             */
             score++;
-            scoreText.text = ("Toplam Score ") + score.ToString();
+            scoreText.text = ("Total Score ") + score.ToString();
 
         }
     }

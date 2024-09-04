@@ -9,9 +9,9 @@ public class ColumnPool : MonoBehaviour
     public GameObject columnPrefab;
     private Vector2 columnPoolPosition = new Vector2(-15f, -25f);
     private float timeSinceLastSpawn;
-    public float spawnRate = 1f;
-    public float columnMin = -1.5f;
-    public float columnMax = 2.5f;
+    private const float spawnRate = 1.5f;
+    private const float columnMin = -1.8f;
+    private const float columnMax = 2f;
     public float spawnXPosition = 2f;
     private int currentcolumn = 0;
 
@@ -33,7 +33,8 @@ public class ColumnPool : MonoBehaviour
         if (timeSinceLastSpawn >= spawnRate)
         {
             timeSinceLastSpawn = 0;
-            float spawnYPosition = Random.Range(columnMin, columnMax);
+            float spawnYPosition = GetRandomFloat(columnMin, columnMax);
+            Debug.Log(spawnYPosition);
             columns[currentcolumn].transform.position = new Vector2(spawnXPosition, spawnYPosition);
             currentcolumn++;
             if (currentcolumn >= columnPoolSize)
@@ -41,5 +42,13 @@ public class ColumnPool : MonoBehaviour
                 currentcolumn = 0;
             }
         }
+                
+    }
+
+    // f(x,y) = x + y
+    // f(columnMin,columnMax)
+    float GetRandomFloat(float min, float max)  // -2 , +2
+    {
+        return min + (max - min) * UnityEngine.Random.value; // Random.value 0.0 ile 1.0 arasýnda deðer döner
     }
 }

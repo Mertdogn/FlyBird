@@ -20,9 +20,9 @@ public class ScrollingObject : MonoBehaviour
             rb2d.velocity = Vector2.zero;
 
         }
-        if (transform.position.x < -5.7f)
+        if (transform.position.x < -10.5f)
         {
-            transform.position = new Vector2(5.8f, -4.6f);
+            transform.position = new Vector2(10.5f, -6.5f);
         }
 
 

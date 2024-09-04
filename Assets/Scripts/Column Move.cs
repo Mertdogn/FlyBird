@@ -8,7 +8,7 @@ public class ColumnMove : MonoBehaviour
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        rb2d.velocity = new Vector2(-1.5f, 0);
+        rb2d.velocity = new Vector2(-3f, 0);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
